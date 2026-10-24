@@ -1,4 +1,4 @@
 package org.ibrahim.tasktracker.domain.dto;
 
-public class ErrorDto {
+public record ErrorDto(String error) {
 }
