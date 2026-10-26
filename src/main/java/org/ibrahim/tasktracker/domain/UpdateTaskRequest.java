@@ -1,4 +1,15 @@
 package org.ibrahim.tasktracker.domain;
 
-public record UpdateTaskRequest() {
+import org.ibrahim.tasktracker.domain.entity.TaskPriority;
+import org.ibrahim.tasktracker.domain.entity.TaskStatus;
+
+import java.time.LocalDate;
+
+public record UpdateTaskRequest(
+        String title,
+        String description,
+        LocalDate dueDate,
+        TaskStatus status,
+        TaskPriority priority
+) {
 }
