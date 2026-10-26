@@ -6,9 +6,11 @@ import org.ibrahim.tasktracker.domain.entity.Task;
 import org.ibrahim.tasktracker.domain.entity.TaskStatus;
 import org.ibrahim.tasktracker.repository.TaskRepository;
 import org.ibrahim.tasktracker.service.TaskService;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -35,5 +37,11 @@ public class TaskServiceImpl implements TaskService {
         );
 
         return taskRepository.save(task);
+    }
+
+    @Override
+    public List<Task> listTasks() {
+        return taskRepository.findAll(Sort.by(Sort.Direction.ASC, "created"));
+
     }
 }
