@@ -42,6 +42,5 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<Task> listTasks() {
         return taskRepository.findAll(Sort.by(Sort.Direction.ASC, "created"));
-
     }
 }
